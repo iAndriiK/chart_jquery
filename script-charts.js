@@ -10,8 +10,8 @@ function pieChart() {
   var pullOutFrameStep = 4;
   var pullOutFrameInterval = 40;
   var pullOutLabelPadding = 65;
-  var pullOutLabelFont = "bold 16px 'Trebuchet MS', Verdana, sans-serif";
-  var pullOutValueFont = "bold 12px 'Trebuchet MS', Verdana, sans-serif";
+  var pullOutLabelFont = "bold 16px Georgia";
+  var pullOutValueFont = "bold 16px Georgia";
   var pullOutValuePrefix = "";
   var pullOutShadowColour = "rgba( 0, 0, 0, .5 )";
   var pullOutShadowOffsetX = 5;
@@ -87,10 +87,10 @@ function pieChart() {
 
     drawChart();
     $('#'+chartById[chartId]).click ( handleChartClick );
-    console.log(chartId);
   }
 
   function handleChartClick ( clickEvent ) {
+      chartId = chartById.indexOf(clickEvent.target.id);
       var mouseX = clickEvent.pageX - this.offsetLeft;
       var mouseY = clickEvent.pageY - this.offsetTop;
       var xFromCentre = mouseX - centreX[chartId];
